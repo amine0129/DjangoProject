@@ -1,0 +1,48 @@
+[{
+  "_id": {
+    "$oid": "67d9a1061e2a762570b71238"
+  },
+  "category_id": 1,
+  "name": "Fitness & Wellness",
+  "description": "Activities focused on physical fitness and well-being."
+},
+{
+  "_id": {
+    "$oid": "67d9a1061e2a762570b71239"
+  },
+  "category_id": 2,
+  "name": "Team Sports",
+  "description": "Sports played in teams, promoting teamwork and strategy."
+},
+{
+  "_id": {
+    "$oid": "67d9a1061e2a762570b7123a"
+  },
+  "category_id": 3,
+  "name": "Aquatic Sports",
+  "description": "Water-based activities including swimming and water polo."
+},
+{
+  "_id": {
+    "$oid": "67d9a1061e2a762570b7123b"
+  },
+  "category_id": 4,
+  "name": "Martial Arts",
+  "description": "Disciplined combat sports and self-defense techniques."
+},
+{
+  "_id": {
+    "$oid": "67d9a1061e2a762570b7123c"
+  },
+  "category_id": 5,
+  "name": "Racquet Sports",
+  "description": "Sports involving racquets such as tennis and badminton."
+},
+{
+  "_id": {
+    "$oid": "67d9a1061e2a762570b7123d"
+  },
+  "category_id": 6,
+  "name": "Extreme Sports",
+  "description": "Adrenaline-pumping activities such as rock climbing and parkour."
+}]

@@ -1,0 +1,33 @@
+[{
+  "_id": {
+    "$oid": "67da3bec55f8c908a5b7123e"
+  },
+  "fullname": "Sarah El Amrani",
+  "phone": "0712345678",
+  "category": "Martial Arts",
+  "inscriptionDate": {
+    "$date": "2025-03-19T03:37:16.633Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67da3bec55f8c908a5b7123f"
+  },
+  "fullname": "Karim Othmani",
+  "phone": "0623456789",
+  "category": "Aquatic Sports",
+  "inscriptionDate": {
+    "$date": "2025-03-19T03:37:16.633Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67da3bec55f8c908a5b71240"
+  },
+  "fullname": "Leila Kabbaj",
+  "phone": "0687654321",
+  "category": "Racquet Sports",
+  "inscriptionDate": {
+    "$date": "2025-03-19T03:37:16.633Z"
+  }
+}]
