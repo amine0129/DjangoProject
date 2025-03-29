@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <table>
+        <tr>
+            <td>Full Name</td>
+            <td>phone</td>
+            <td>Category</td>
+            <td>Inscreption date</td> 
+            <td colspan="2" >Action</td>
+        </tr>
+        {% for sub in subscribers  %}
+        <tr>
+            <td>{{sub.fullname}}</td>
+            <td>{{sub.phone}}</td>
+            <td>{{sub.category}}</td>
+            <td>{{sub.inscriptionDate}}</td>
+            <td><a href="{% url 'supprimer' sub.fullname %}">supprimer</a></td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
