@@ -26,6 +26,6 @@ def update_subscriber(subscriber_id, update_data):
     return subscribers.update_one({"_id": ObjectId(subscriber_id)}, {"$set": update_data})
 
 # Function to delete a subscriber
-def delete_subscriber(fullname):
-    return subscribers.delete_one({"fullname":fullname})
+def delete_subscriber(id):
+    return subscribers.delete_one({"_id":ObjectId(id)})
 
