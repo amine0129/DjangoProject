@@ -6,19 +6,24 @@
     <title>Document</title>
 </head>
 <body>
-    <form action="{% url "addsub" %}" method="post">
+    <form action="{% url "updatesub" sub_id %}" method="post">
         {% csrf_token %}
         Full name <br>
-        <input type="text" name="fullname" ><br>
+        <input type="text" name="fullname" value="{{sub.fullname}}" ><br>
         Phone <br>
-        <input type="text" name="phone"><br>
+        <input type="text" name="phone" value="{{sub.phone}}" ><br>
         Category <br>
         <select name="category">
         {% for c in categories %}
-        <option value="{{c.name}}">{{c.name}}</option>
+        {% if c.name == sub.category %}
+        <option value="{{c.name}}" selected >{{c.name}}</option>
+        {% else %}
+        <option value="{{c.name}}"  >{{c.name}}</option>
+        {% endif %}
         {% endfor %}
         </select><br>
         <button type="submit" >Add</button>
     </form>
+   
 </body>
 </html>

@@ -20,9 +20,11 @@
             <td>{{sub.phone}}</td>
             <td>{{sub.category}}</td>
             <td>{{sub.inscriptionDate}}</td>
-            <td><a href="{% url 'supprimer' sub.id %}">supprimer</a></td>
+            <td><a href="{% url 'supprimer' sub.id %}">Delete</a></td>
+            <td><a href="{% url "editsub" sub.id %}">Edit</a></td>
         </tr>
         {% endfor %}
     </table>
+    <a href="{% url "createsub" %}">Add subscriber</a>
 </body>
 </html>
