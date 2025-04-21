@@ -4,26 +4,125 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        body {
+            background: linear-gradient(135deg, #74ebd5, #ACB6E5);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 2rem 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        form {
+            background-color: white;
+            padding: 2rem 3rem;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            width: 90%;
+            max-width: 600px;
+            margin-top: 1rem;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+
+        input[type="text"], select {
+            padding: 10px;
+            width: 100%;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            font-size: 16px;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #3498db;
+            color: white;
+            font-size: 16px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            width: 100%;
+        }
+
+        button:hover {
+            background-color: #2980b9;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            form {
+                padding: 1.5rem;
+            }
+
+            h1 {
+                font-size: 1.5rem;
+            }
+
+            input[type="text"], select {
+                width: 100%;
+            }
+
+            button {
+                padding: 8px 15px;
+                font-size: 14px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            form {
+                padding: 1rem;
+            }
+
+            h1 {
+                font-size: 1.2rem;
+            }
+
+            input[type="text"], select {
+                width: 100%;
+            }
+
+            button {
+                padding: 8px 15px;
+                font-size: 14px;
+            }
+        }
+    </style>
 </head>
 <body>
-    <form action="{% url "updatesub" sub_id %}" method="post">
+    <form action="{% url 'updatesub' sub_id %}" method="post">
         {% csrf_token %}
-        Full name <br>
-        <input type="text" name="fullname" value="{{sub.fullname}}" ><br>
-        Phone <br>
-        <input type="text" name="phone" value="{{sub.phone}}" ><br>
-        Category <br>
-        <select name="category">
-        {% for c in categories %}
-        {% if c.name == sub.category %}
-        <option value="{{c.name}}" selected >{{c.name}}</option>
-        {% else %}
-        <option value="{{c.name}}"  >{{c.name}}</option>
-        {% endif %}
-        {% endfor %}
+        <h1>Modifier un Membre</h1>
+        
+        <label for="fullname">Nom Complet</label>
+        <input type="text" name="fullname" value="{{sub.fullname}}" id="fullname"><br>
+
+        <label for="phone">Tele</label>
+        <input type="text" name="phone" value="{{sub.phone}}" id="phone"><br>
+
+        <label for="category">Categorie</label>
+        <select name="category" id="category">
+            {% for c in categories %}
+                {% if c.name == sub.category %}
+                    <option value="{{c.name}}" selected>{{c.name}}</option>
+                {% else %}
+                    <option value="{{c.name}}">{{c.name}}</option>
+                {% endif %}
+            {% endfor %}
         </select><br>
-        <button type="submit" >Add</button>
+
+        <button type="submit">Update</button>
     </form>
-   
 </body>
 </html>
